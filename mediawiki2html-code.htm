@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en"><head>
+  <title>mediawiki2html machine: source code [Johannes Buchner]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="generator" content="DokuWiki Release 2005-09-22e">
+  <link rel="start" href="http://johbuc6.coconia.net/">
+  <link rel="contents" href="http://johbuc6.coconia.net/doku.php/mediawiki2html_machine/code?do=index" title="">
+  <link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://johbuc6.coconia.net/feed.php">
+  <link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://johbuc6.coconia.net/feed.php?mode=list&amp;ns=mediawiki2html_machine">
+  <link rel="alternate" type="text/html" title="Plain HTML" href="http://johbuc6.coconia.net/doku.php/mediawiki2html_machine/code?do=export_html">
+  <link rel="alternate" type="text/plain" title="Wiki Markup" href="http://johbuc6.coconia.net/doku.php/mediawiki2html_machine/code?do=export_raw">
+  <meta name="date" content="2006-08-27T20:46:18+0000">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" media="screen" type="text/css" href="mediawiki2html-code_files/css.css">
+  <link rel="stylesheet" media="print" type="text/css" href="mediawiki2html-code_files/css_002.css">
+  <script type="text/javascript" charset="utf-8" src="mediawiki2html-code_files/js.php"></script>
+
+  <link rel="shortcut icon" href="http://johbuc6.coconia.net/lib/images/favicon.ico">
+  <link rel="start" href="http://johbuc6.coconia.net/doku.php/">
+<link href="mediawiki2html-code_files/socialwidgets.css" type="text/css" rel="stylesheet"></head>
+
+<body>
+<div id="site">
+  <!-- error messages, etc. -->
+  <div id="header">
+ 
+    <h1><a href="http://johbuc6.coconia.net/doku.php/" name="top" accesskey="h" title="[ALT+H]">Johannes Buchner</a></h1>
+    <h2>[[mediawiki2html_machine:code]]</h2>
+
+          <p class="trace">Trace: <span class="bcsep">»</span> <a href="http://johbuc6.coconia.net/doku.php/mediawiki2html_machine" class="breadcrumbs" title="mediawiki2html_machine">Mediawiki2HTML machine</a> <span class="bcsep">»</span> <span class="curid"><a href="http://johbuc6.coconia.net/doku.php/mediawiki2html_machine/code" class="breadcrumbs" title="mediawiki2html_machine:code">mediawiki2html machine: source code</a></span></p>
+        <hr class="invisible">
+  </div>
+
+  <div id="mainbox">
+
+    <div id="pageactions">
+      <form class="button" method="post" action="/doku.php/mediawiki2html_machine/code"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="" type="hidden"><input value="Edit this page" class="button" title="ALT+E" accesskey="e" type="submit"></div></form>      <form class="button" method="get" action="/doku.php/discussion/mediawiki2html_machine/code"><div class="no"><input value="Discussion" class="button" type="submit"></div></form>      <form class="button" method="get" action="/doku.php/mediawiki2html_machine/code"><div class="no"><input name="do" value="revisions" type="hidden"><input value="Old revisions" class="button" title="ALT+O" accesskey="o" type="submit"></div></form>      <form class="button" method="get" action="/doku.php/mediawiki2html_machine/code"><div class="no"><input name="do" value="backlink" type="hidden"><input value="Backlinks" class="button" type="submit"></div></form>    </div>
+    
+    <div id="siteactions">
+      <div class="box">
+        <ul>
+          <li><a href="http://johbuc6.coconia.net/doku.php/">Start site</a></li>
+          <li><a href="http://johbuc6.coconia.net/doku.php/wiki/syntax">Wiki Syntax</a></li>
+          <li><a href="http://johbuc6.coconia.net/doku.php/mediawiki2html_machine/code?do=recent" class="action recent" accesskey="r">Recent changes</a></li>
+          <li><a href="http://johbuc6.coconia.net/doku.php/mediawiki2html_machine/code?do=index" class="action index" accesskey="x">Index</a></li>
+        </ul>
+        <form action="/doku.php/" accept-charset="utf-8" class="search" name="search"><div class="no"><input name="do" value="search" type="hidden"><input id="qsearch_in" accesskey="f" name="id" class="edit" type="text"><input value="Search" class="button" type="submit"><div style="display: none;" id="qsearch_out" class="ajax_qsearch JSpopup"></div></div></form>      </div>
+    <div id="embeddedlogo">
+      <div id="contact">
+        <ul>
+          <li>Johannes Buchner</li>
+          <li><a href="http://johbuc6.coconia.net/doku.php/about">Contact Info</a></li>
+        </ul>        
+      </div>
+            <div class="box">
+      
+<a name="login"></a><h1>Login</h1>
+<div class="level1">
+
+<p>
+ You are currently not logged in! <br>
+ <br>
+ <br>
+ <br>
+
+</p>
+
+</div>
+    <div class="centeralign">
+    <form action="/doku.php" accept-charset="utf-8" method="post">
+      <fieldset>
+        <legend>Login</legend>
+        <input name="id" value="mediawiki2html_machine:code" type="hidden">
+        <input name="do" value="login" type="hidden">
+        <label class="block">
+          <span>Username</span>
+          <input name="u" class="edit" type="text">
+        </label><br>
+        <label class="block">
+          <span>Password</span>
+          <input name="p" class="edit" type="password">
+        </label><br>
+        <input value="Login" class="button" type="submit">
+        <label for="remember" class="simple">
+          <input name="r" id="remember" value="1" type="checkbox">
+          <span>Remember me</span>
+        </label>
+      </fieldset>
+    </form>
+  <p>You don't have an account yet? Just get one: <a href="http://johbuc6.coconia.net/doku.php/mediawiki2html_machine/code?do=register" class="wikilink1">Register</a></p><p>Forgotten your password? Get a new one: <a href="http://johbuc6.coconia.net/doku.php/mediawiki2html_machine/code?do=resendpwd" class="wikilink1">Send new password</a></p>    </div>
+        </div>
+          </div>
+<!-- todo: navigation bar
+      <div class="box">
+		      </div>
+-->
+
+
+    </div>
+    <hr class="invisible">
+
+    
+    <div id="content">
+      <!-- wikipage start -->
+      <div class="toc">
+<div class="tocheader toctoggle" id="toc__header"><img alt="-" src="mediawiki2html-code_files/arrow_up.gif" id="toc__hide"><img style="display: none;" alt="+" src="mediawiki2html-code_files/arrow_down.gif" id="toc__show">Table of Contents</div>
+<div id="toc__inside">
+<ul class="toc">
+<li class="level1"><span class="li"><a href="#mediawiki2html_machinesource_code" class="toc">mediawiki2html machine: source code</a></span><ul class="toc">
+<li class="clear"><ul class="toc">
+<li class="level3"><span class="li"><a href="#convert.php" class="toc">convert.php</a></span></li>
+<li class="level3"><span class="li"><a href="#simpletext_function" class="toc">SimpleText function</a></span></li>
+<li class="level3"><span class="li"><a href="#converttables_function" class="toc">convertTables function</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<a name="mediawiki2html_machinesource_code"></a><h1>mediawiki2html machine: source code</h1>
+<div class="level1">
+
+<p>
+ Ok, here is, what i have: 
+</p>
+
+</div>
+<div class="secedit"><form class="button" method="post" action="/doku.php/mediawiki2html_machine/code"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="1-77" type="hidden"><input value="Edit" class="button" type="submit"></div></form></div>
+<a name="convert.php"></a><h3>convert.php</h3>
+<div class="level3">
+<pre class="code php"><span class="co1">// holding the wiki markup in the variable $text</span>
+	<span class="re0">$html</span> = <span class="re0">$text</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/html_entity_decode"><span class="kw3">html_entity_decode</span></a><span class="br0">(</span><span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/str_replace"><span class="kw3">str_replace</span></a><span class="br0">(</span><span class="st0">'&amp;ndash;'</span>,<span class="st0">'-'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/str_replace"><span class="kw3">str_replace</span></a><span class="br0">(</span><span class="st0">'&amp;quot;'</span>,<span class="st0">'"'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\&amp;</span>amp;(nbsp);/'</span>,<span class="st0">'&amp;${1};'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+&nbsp;
+	
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/str_replace"><span class="kw3">str_replace</span></a><span class="br0">(</span><span class="st0">'{{PAGENAME}}'</span>,<span class="re0">$title</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	
+	<span class="co1">// Table</span>
+	<span class="re0">$html</span> = convertTables<span class="br0">(</span><span class="re0">$html</span><span class="br0">)</span>;
+	
+	<span class="re0">$html</span> = simpleText<span class="br0">(</span><span class="re0">$html</span><span class="br0">)</span>;</pre>
+</div>
+<div class="secedit"><form class="button" method="post" action="/doku.php/mediawiki2html_machine/code"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="78-488" type="hidden"><input value="Edit" class="button" type="submit"></div></form></div>
+<a name="simpletext_function"></a><h3>SimpleText function</h3>
+<div class="level3">
+
+<p>
+Simple markup, like links, lists, ... 
+</p>
+<pre class="code php"><span class="kw2">function</span> simpleText<span class="br0">(</span><span class="re0">$html</span><span class="br0">)</span><span class="br0">{</span>
+&nbsp;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/str_replace"><span class="kw3">str_replace</span></a><span class="br0">(</span><span class="st0">'&amp;ndash;'</span>,<span class="st0">'-'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/str_replace"><span class="kw3">str_replace</span></a><span class="br0">(</span><span class="st0">'&amp;quot;'</span>,<span class="st0">'"'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\&amp;</span>amp;(nbsp);/'</span>,<span class="st0">'&amp;${1};'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+&nbsp;
+	<span class="co1">//formatting</span>
+	<span class="co1">// bold</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\'</span><span class="es0">\'</span><span class="es0">\'</span>([^<span class="es0">\n</span><span class="es0">\'</span>]+)<span class="es0">\'</span><span class="es0">\'</span><span class="es0">\'</span>/'</span>,<span class="st0">'&lt;strong&gt;${1}&lt;/strong&gt;'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="co1">// emphasized</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\'</span><span class="es0">\'</span>([^<span class="es0">\'</span><span class="es0">\n</span>]+)<span class="es0">\'</span><span class="es0">\'</span>?/'</span>,<span class="st0">'&lt;em&gt;${1}&lt;/em&gt;'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="co1">//interwiki links</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace_callback"><span class="kw3">preg_replace_callback</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\[</span><span class="es0">\[</span>([^<span class="es0">\|</span><span class="es0">\n</span><span class="es0">\]</span>:]+)[<span class="es0">\|</span>]([^<span class="es0">\]</span>]+)<span class="es0">\]</span><span class="es0">\]</span>/'</span>,<span class="st0">'helper_interwikilinks'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="co1">// without text</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace_callback"><span class="kw3">preg_replace_callback</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\[</span><span class="es0">\[</span>([^<span class="es0">\|</span><span class="es0">\n</span><span class="es0">\]</span>:]+)<span class="es0">\]</span><span class="es0">\]</span>/'</span>,<span class="st0">'helper_interwikilinks'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="co1">// </span>
+	<span class="co1">//$html = preg_replace('/{{([^}]+)+}}/','Interwiki: ${1}+${2}+${3}',$html);</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/{{([^<span class="es0">\|</span><span class="es0">\n</span><span class="es0">\}</span>]+)([<span class="es0">\|</span>]?([^<span class="es0">\}</span>]+))+<span class="es0">\}</span><span class="es0">\}</span>/'</span>,<span class="st0">'Interwiki: ${1} &amp;raquo; ${3}'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="co1">// Template</span>
+	<span class="co1">//$html = preg_replace('/{{([^}]*)}}/',' ',$html);</span>
+	<span class="co1">// categories</span>
+	<span class="co1">//$html = preg_replace('/\[\[([^\|\n\]]+)([\|]([^\]]+))?\]\]/','',$html);</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\[</span><span class="es0">\[</span>([^<span class="es0">\|</span><span class="es0">\n</span><span class="es0">\]</span>]{2})([<span class="es0">\:</span>]([^<span class="es0">\]</span>]+))?<span class="es0">\]</span><span class="es0">\]</span>/'</span>,<span class="st0">'Translation: ${1} &amp;raquo; ${3}'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\[</span><span class="es0">\[</span>([^<span class="es0">\|</span><span class="es0">\n</span><span class="es0">\]</span>]+)([<span class="es0">\:</span>]([^<span class="es0">\]</span>]+))?<span class="es0">\]</span><span class="es0">\]</span>/'</span>,<span class="st0">'Category: ${1} - ${2}'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="co1">// image</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\[</span><span class="es0">\[</span>([^<span class="es0">\|</span><span class="es0">\n</span><span class="es0">\]</span>]+)([<span class="es0">\|</span>]([^<span class="es0">\]</span>]+))+<span class="es0">\]</span><span class="es0">\]</span>/'</span>,<span class="st0">'Image: ${0}+${1}+${2}+${3}'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	
+	<span class="co1">//links</span>
+	<span class="co1">//$html = preg_replace('/\[([^\[\]\|\n\': ]+)\]/','&lt;a href="${1}"&gt;${1}&lt;/a&gt;',$html);</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace_callback"><span class="kw3">preg_replace_callback</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\[</span>([^<span class="es0">\[</span><span class="es0">\]</span><span class="es0">\|</span><span class="es0">\n</span><span class="es0">\'</span>: ]+)<span class="es0">\]</span>/'</span>,<span class="st0">'helper_externlinks'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="co1">// with text</span>
+	<span class="co1">//$html = preg_replace('/\[([^\[\]\|\n\' ]+)[\| ]([^\]\']+)\]/','&lt;a href="${1}"&gt;${2}&lt;/a&gt;',$html);</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace_callback"><span class="kw3">preg_replace_callback</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\[</span>([^<span class="es0">\[</span><span class="es0">\]</span><span class="es0">\|</span><span class="es0">\n</span><span class="es0">\'</span> ]+)[<span class="es0">\|</span> ]([^<span class="es0">\]</span><span class="es0">\'</span>]+)<span class="es0">\]</span>/'</span>,<span class="st0">'helper_externlinks'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	
+	<span class="co1">// allowed tags</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/&amp;lt;(<span class="es0">\/</span>?)(small|sup|sub|u)&amp;gt;/'</span>,<span class="st0">'&lt;${1}${2}&gt;'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\n</span>*&amp;lt;br *<span class="es0">\/</span>?&amp;gt;<span class="es0">\n</span>*/'</span>,<span class="st0">"<span class="es0">\n</span>"</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/&amp;lt;(<span class="es0">\/</span>?)(math|pre|code|nowiki)&amp;gt;/'</span>,<span class="st0">'&lt;${1}pre&gt;'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/&amp;lt;!--/'</span>,<span class="st0">'&lt;!--'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/--&amp;gt;/'</span>,<span class="st0">' --&gt;'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+&nbsp;
+	<span class="co1">// headings</span>
+	<span class="kw1">for</span><span class="br0">(</span><span class="re0">$i</span>=<span class="nu0">7</span>;<span class="re0">$i</span>&gt;<span class="nu0">0</span>;<span class="re0">$i</span>--<span class="br0">)</span><span class="br0">{</span>
+		<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span>
+			<span class="st0">'/<span class="es0">\n</span>+[=]{'</span>.<span class="re0">$i</span>.<span class="st0">'}([^=]+)[=]{'</span>.<span class="re0">$i</span>.<span class="st0">'}<span class="es0">\n</span>*/'</span>,
+			<span class="st0">'&lt;h'</span>.<span class="re0">$i</span>.<span class="st0">'&gt;${1}&lt;/h'</span>.<span class="re0">$i</span>.<span class="st0">'&gt;'</span>,
+			<span class="re0">$html</span>
+		<span class="br0">)</span>;
+	<span class="br0">}</span>
+	
+	<span class="co1">//lists</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span>
+		<span class="st0">'/(<span class="es0">\n</span>[ ]*[^#* ][^<span class="es0">\n</span>]*)<span class="es0">\n</span>(([ ]*[*]([^<span class="es0">\n</span>]*)<span class="es0">\n</span>)+)/'</span>,
+		<span class="st0">'${1}&lt;ul&gt;'</span>.<span class="st0">"<span class="es0">\n</span>"</span>.<span class="st0">'${2}'</span>.<span class="st0">'&lt;/ul&gt;'</span>.<span class="st0">"<span class="es0">\n</span>"</span>,
+		<span class="re0">$html</span>
+	<span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span>
+		<span class="st0">'/(<span class="es0">\n</span>[ ]*[^#* ][^<span class="es0">\n</span>]*)<span class="es0">\n</span>(([ ]*[#]([^<span class="es0">\n</span>]*)<span class="es0">\n</span>)+)/'</span>,
+		<span class="st0">'${1}&lt;ol&gt;'</span>.<span class="st0">"<span class="es0">\n</span>"</span>.<span class="st0">'${2}'</span>.<span class="st0">'&lt;/ol&gt;'</span>.<span class="st0">"<span class="es0">\n</span>"</span>,
+		<span class="re0">$html</span>
+	<span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/<span class="es0">\n</span>[ ]*[<span class="es0">\*</span>#]+([^<span class="es0">\n</span>]*)/'</span>,<span class="st0">'&lt;li&gt;${1}&lt;/li&gt;'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/----/'</span>,<span class="st0">'&lt;hr /&gt;'</span>,<span class="re0">$html</span><span class="br0">)</span>;
+&nbsp;
+	<span class="co1">//$html = nl2br($html);</span>
+	<span class="co1">// line breaks</span>
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/[<span class="es0">\n</span><span class="es0">\r</span>]{4}/'</span>,<span class="st0">"&lt;br/&gt;&lt;br/&gt;"</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/[<span class="es0">\n</span><span class="es0">\r</span>]{2}/'</span>,<span class="st0">"&lt;br/&gt;"</span>,<span class="re0">$html</span><span class="br0">)</span>;
+	
+	<span class="re0">$html</span> = <a target="_blank" href="http://www.php.net/preg_replace"><span class="kw3">preg_replace</span></a><span class="br0">(</span><span class="st0">'/[&gt;]&lt;br<span class="es0">\/</span>&gt;[&lt;]/'</span>,<span class="st0">"&gt;&lt;"</span>,<span class="re0">$html</span><span class="br0">)</span>;
+&nbsp;
+	<span class="kw1">return</span> <span class="re0">$html</span>;
+<span class="br0">}</span>
+<span class="kw2">function</span> helper_externlinks<span class="br0">(</span><span class="re0">$matches</span><span class="br0">)</span><span class="br0">{</span>
+	<span class="re0">$target</span> = <span class="re0">$matches</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span>;
+	<span class="re0">$text</span> = <a target="_blank" href="http://www.php.net/empty"><span class="kw3">empty</span></a><span class="br0">(</span><span class="re0">$matches</span><span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">)</span>?<span class="re0">$matches</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span>:<span class="re0">$matches</span><span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span>;
+	<span class="kw1">return</span> <span class="st0">'&lt;a href="'</span>.<span class="re0">$target</span>.<span class="st0">'"&gt;'</span>.<span class="re0">$text</span>.<span class="st0">'&lt;/a&gt;'</span>;
+<span class="br0">}</span>
+<span class="kw2">function</span> helper_interwikilinks<span class="br0">(</span><span class="re0">$matches</span><span class="br0">)</span><span class="br0">{</span>
+	<span class="re0">$target</span> = <span class="re0">$matches</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span>;
+	<span class="re0">$text</span> = <a target="_blank" href="http://www.php.net/empty"><span class="kw3">empty</span></a><span class="br0">(</span><span class="re0">$matches</span><span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">)</span>?<span class="re0">$matches</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span>:<span class="re0">$matches</span><span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span>;
+	<span class="re0">$class</span>=<span class="st0">" class=<span class="es0">\"</span>dunno<span class="es0">\"</span> "</span>;
+	<span class="coMULTI">/*static $links_checked_interwiki = 0;
+	if(!$_GET["nocache"] &amp;&amp; ++$links_checked_interwiki&lt;10){
+		$data = cachedFunc("getPos",$target);
+		if($data["pos"]) $class = " class=\"exists\" "; $class = " class=\"notexists\" ";
+	}*/</span>
+	<span class="kw1">return</span> <span class="st0">'&lt;a '</span>.<span class="re0">$class</span>.<span class="st0">' href="?page='</span>.<span class="re0">$target</span>.<span class="st0">'"&gt;'</span>.<span class="re0">$text</span>.<span class="st0">'&lt;/a&gt;'</span>;
+<span class="br0">}</span></pre>
+</div>
+<div class="secedit"><form class="button" method="post" action="/doku.php/mediawiki2html_machine/code"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="489-3906" type="hidden"><input value="Edit" class="button" type="submit"></div></form></div>
+<a name="converttables_function"></a><h3>convertTables function</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Handles Tables in tables</div>
+</li>
+</ul>
+<pre class="code php"><span class="kw2">function</span> convertTables<span class="br0">(</span><span class="re0">$text</span><span class="br0">)</span><span class="br0">{</span>
+	<span class="re0">$lines</span> = <a target="_blank" href="http://www.php.net/explode"><span class="kw3">explode</span></a><span class="br0">(</span><span class="st0">"<span class="es0">\n</span>"</span>,<span class="re0">$text</span><span class="br0">)</span>;
+	<span class="re0">$innertable</span> = <span class="nu0">0</span>;
+	<span class="re0">$innertabledata</span> = <a target="_blank" href="http://www.php.net/array"><span class="kw3">array</span></a><span class="br0">(</span><span class="br0">)</span>;
+	<span class="kw1">foreach</span><span class="br0">(</span><span class="re0">$lines</span> <span class="kw1">as</span> <span class="re0">$line</span><span class="br0">)</span><span class="br0">{</span>
+		<span class="co1">//echo "&lt;pre&gt;".++$i.": ".htmlspecialchars($line)."&lt;/pre&gt;";</span>
+		<span class="re0">$line</span> = <a target="_blank" href="http://www.php.net/str_replace"><span class="kw3">str_replace</span></a><span class="br0">(</span><span class="st0">"position:relative"</span>,<span class="st0">""</span>,<span class="re0">$line</span><span class="br0">)</span>;
+		<span class="re0">$line</span> = <a target="_blank" href="http://www.php.net/str_replace"><span class="kw3">str_replace</span></a><span class="br0">(</span><span class="st0">"position:absolute"</span>,<span class="st0">""</span>,<span class="re0">$line</span><span class="br0">)</span>;
+		<span class="kw1">if</span><span class="br0">(</span><a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">0</span>,<span class="nu0">2</span><span class="br0">)</span> == <span class="st0">'{|'</span><span class="br0">)</span><span class="br0">{</span>
+			<span class="co1">// inner table</span>
+			<span class="co1">//echo "&lt;p&gt;beginning inner table #$innertable&lt;/p&gt;";</span>
+			<span class="re0">$innertable</span>++;
+		<span class="br0">}</span>
+		<span class="re0">$innertabledata</span><span class="br0">[</span><span class="re0">$innertable</span><span class="br0">]</span> .= <span class="re0">$line</span> . <span class="st0">"<span class="es0">\n</span>"</span>;
+		<span class="kw1">if</span><span class="br0">(</span><span class="re0">$innertable</span><span class="br0">)</span><span class="br0">{</span>
+			<span class="co1">// we're inside</span>
+			<span class="kw1">if</span><span class="br0">(</span><a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">0</span>,<span class="nu0">2</span><span class="br0">)</span> == <span class="st0">'|}'</span><span class="br0">)</span><span class="br0">{</span>
+				<span class="re0">$innertableconverted</span> = convertTable<span class="br0">(</span><span class="re0">$innertabledata</span><span class="br0">[</span><span class="re0">$innertable</span><span class="br0">]</span><span class="br0">)</span>;
+				<span class="re0">$innertabledata</span><span class="br0">[</span><span class="re0">$innertable</span><span class="br0">]</span> = <span class="st0">""</span>;
+				<span class="re0">$innertable</span>--;
+				<span class="re0">$innertabledata</span><span class="br0">[</span><span class="re0">$innertable</span><span class="br0">]</span> .= <span class="re0">$innertableconverted</span>.<span class="st0">"<span class="es0">\n</span>"</span>;
+			<span class="br0">}</span>
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+	<span class="kw1">return</span> <span class="re0">$innertabledata</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>;
+<span class="br0">}</span></pre>
+</div>
+
+<a name="converttable_function"></a><h4>convertTable function</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Handles tables</div>
+</li>
+</ul>
+<pre class="code php"><span class="kw2">function</span> convertTable<span class="br0">(</span><span class="re0">$intext</span><span class="br0">)</span><span class="br0">{</span>
+	<span class="re0">$text</span> = <span class="re0">$intext</span>;
+	<span class="re0">$lines</span> = <a target="_blank" href="http://www.php.net/explode"><span class="kw3">explode</span></a><span class="br0">(</span><span class="st0">"<span class="es0">\n</span>"</span>,<span class="re0">$text</span><span class="br0">)</span>;
+	<span class="re0">$intable</span> = <span class="kw2">false</span>;
+	
+	<span class="co1">//var_dump($lines);</span>
+	<span class="kw1">foreach</span><span class="br0">(</span><span class="re0">$lines</span> <span class="kw1">as</span> <span class="re0">$line</span><span class="br0">)</span><span class="br0">{</span>
+		<span class="re0">$line</span> = <a target="_blank" href="http://www.php.net/trim"><span class="kw3">trim</span></a><span class="br0">(</span><span class="re0">$line</span><span class="br0">)</span>;
+		<span class="kw1">if</span><span class="br0">(</span><a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span> == <span class="st0">'{'</span><span class="br0">)</span><span class="br0">{</span>
+			<span class="co1">//begin of the table</span>
+			<span class="re0">$stuff</span> = <a target="_blank" href="http://www.php.net/explode"><span class="kw3">explode</span></a><span class="br0">(</span><span class="st0">'| '</span>,<a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">1</span><span class="br0">)</span>,<span class="nu0">2</span><span class="br0">)</span>;
+			<span class="re0">$tableopen</span> = <span class="kw2">true</span>;
+			<span class="re0">$table</span> = <span class="st0">"&lt;table "</span>.<span class="re0">$stuff</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>.<span class="st0">"&gt;<span class="es0">\n</span>"</span>;
+		<span class="br0">}</span> <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span><a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span> == <span class="st0">'|'</span><span class="br0">)</span><span class="br0">{</span>
+			<span class="co1">// table related</span>
+			<span class="re0">$line</span> = <a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">1</span><span class="br0">)</span>;
+			<span class="kw1">if</span><span class="br0">(</span><a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">0</span>,<span class="nu0">5</span><span class="br0">)</span> == <span class="st0">'-----'</span><span class="br0">)</span><span class="br0">{</span>
+				<span class="co1">// row break</span>
+				<span class="kw1">if</span><span class="br0">(</span><span class="re0">$thopen</span><span class="br0">)</span>
+					<span class="re0">$table</span> .=<span class="st0">"&lt;/th&gt;<span class="es0">\n</span>"</span>;
+				<span class="kw1">if</span><span class="br0">(</span><span class="re0">$tdopen</span><span class="br0">)</span>
+					<span class="re0">$table</span> .=<span class="st0">"&lt;/td&gt;<span class="es0">\n</span>"</span>;
+				<span class="kw1">if</span><span class="br0">(</span><span class="re0">$rowopen</span><span class="br0">)</span>
+					<span class="re0">$table</span> .=<span class="st0">"<span class="es0">\t</span>&lt;/tr&gt;<span class="es0">\n</span>"</span>;
+				<span class="re0">$table</span> .= <span class="st0">"<span class="es0">\t</span>&lt;tr&gt;<span class="es0">\n</span>"</span>;
+				<span class="re0">$rowopen</span> = <span class="kw2">true</span>;
+				<span class="re0">$tdopen</span> = <span class="kw2">false</span>;
+				<span class="re0">$thopen</span> = <span class="kw2">false</span>;
+			<span class="br0">}</span><span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span><a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span> == <span class="st0">'}'</span><span class="br0">)</span><span class="br0">{</span>
+				<span class="co1">// table end</span>
+				<span class="kw1">break</span>;
+			<span class="br0">}</span><span class="kw1">else</span><span class="br0">{</span>
+				<span class="co1">// td</span>
+				<span class="re0">$stuff</span> = <a target="_blank" href="http://www.php.net/explode"><span class="kw3">explode</span></a><span class="br0">(</span><span class="st0">'| '</span>,<span class="re0">$line</span>,<span class="nu0">2</span><span class="br0">)</span>;
+				<span class="kw1">if</span><span class="br0">(</span><span class="re0">$tdopen</span><span class="br0">)</span>
+					<span class="re0">$table</span> .=<span class="st0">"&lt;/td&gt;<span class="es0">\n</span>"</span>;
+				<span class="kw1">if</span><span class="br0">(</span><a target="_blank" href="http://www.php.net/count"><span class="kw3">count</span></a><span class="br0">(</span><span class="re0">$stuff</span><span class="br0">)</span>==<span class="nu0">1</span><span class="br0">)</span>
+					<span class="re0">$table</span> .= <span class="st0">"<span class="es0">\t</span><span class="es0">\t</span>&lt;td&gt;"</span>.simpleText<span class="br0">(</span><span class="re0">$stuff</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>;
+				<span class="kw1">else</span>
+					<span class="re0">$table</span> .= <span class="st0">"<span class="es0">\t</span><span class="es0">\t</span>&lt;td "</span>.<span class="re0">$stuff</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>.<span class="st0">"&gt;"</span>.
+						simpleText<span class="br0">(</span><span class="re0">$stuff</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span>;
+				<span class="re0">$tdopen</span> = <span class="kw2">true</span>;
+			<span class="br0">}</span>
+		<span class="br0">}</span> <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span><a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">)</span> == <span class="st0">'!'</span><span class="br0">)</span><span class="br0">{</span>
+			<span class="co1">// th</span>
+			<span class="re0">$stuff</span> = <a target="_blank" href="http://www.php.net/explode"><span class="kw3">explode</span></a><span class="br0">(</span><span class="st0">'| '</span>,<a target="_blank" href="http://www.php.net/substr"><span class="kw3">substr</span></a><span class="br0">(</span><span class="re0">$line</span>,<span class="nu0">1</span><span class="br0">)</span>,<span class="nu0">2</span><span class="br0">)</span>;
+			<span class="kw1">if</span><span class="br0">(</span><span class="re0">$thopen</span><span class="br0">)</span>
+				<span class="re0">$table</span> .=<span class="st0">"&lt;/th&gt;<span class="es0">\n</span>"</span>;
+			<span class="kw1">if</span><span class="br0">(</span><a target="_blank" href="http://www.php.net/count"><span class="kw3">count</span></a><span class="br0">(</span><span class="re0">$stuff</span><span class="br0">)</span>==<span class="nu0">1</span><span class="br0">)</span>
+				<span class="re0">$table</span> .= <span class="st0">"<span class="es0">\t</span><span class="es0">\t</span>&lt;th&gt;"</span>.simpleText<span class="br0">(</span><span class="re0">$stuff</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>;
+			<span class="kw1">else</span>
+				<span class="re0">$table</span> .= <span class="st0">"<span class="es0">\t</span><span class="es0">\t</span>&lt;th "</span>.<span class="re0">$stuff</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>.<span class="st0">"&gt;"</span>.
+					simpleText<span class="br0">(</span><span class="re0">$stuff</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span>;
+			<span class="re0">$thopen</span> = <span class="kw2">true</span>;
+		<span class="br0">}</span><span class="kw1">else</span><span class="br0">{</span>
+			<span class="co1">// plain text</span>
+			<span class="re0">$table</span> .= simpleText<span class="br0">(</span><span class="re0">$line</span><span class="br0">)</span> .<span class="st0">"<span class="es0">\n</span>"</span>;
+		<span class="br0">}</span>
+		<span class="co1">//echo "&lt;pre&gt;".++$i.": ".htmlspecialchars($line)."&lt;/pre&gt;";</span>
+		<span class="co1">//echo "&lt;p&gt;Table so far: &lt;pre&gt;".htmlspecialchars($table)."&lt;/pre&gt;&lt;/p&gt;";</span>
+	<span class="br0">}</span>
+	<span class="kw1">if</span><span class="br0">(</span><span class="re0">$thopen</span><span class="br0">)</span>
+		<span class="re0">$table</span> .=<span class="st0">"&lt;/th&gt;<span class="es0">\n</span>"</span>;
+	<span class="kw1">if</span><span class="br0">(</span><span class="re0">$tdopen</span><span class="br0">)</span>
+		<span class="re0">$table</span> .=<span class="st0">"&lt;/td&gt;<span class="es0">\n</span>"</span>;
+	<span class="kw1">if</span><span class="br0">(</span><span class="re0">$rowopen</span><span class="br0">)</span>
+		<span class="re0">$table</span> .=<span class="st0">"<span class="es0">\t</span>&lt;/tr&gt;<span class="es0">\n</span>"</span>;
+	<span class="kw1">if</span><span class="br0">(</span><span class="re0">$tableopen</span><span class="br0">)</span>
+		<span class="re0">$table</span> .=<span class="st0">"&lt;/table&gt;<span class="es0">\n</span>"</span>;
+	<span class="co1">//echo "&lt;hr /&gt;";</span>
+	<span class="co1">//echo "&lt;p&gt;Table at the end: &lt;pre&gt;".htmlspecialchars($table)."&lt;/pre&gt;&lt;/p&gt;";</span>
+	<span class="co1">//echo $table;	</span>
+	<span class="kw1">return</span> <span class="re0">$table</span>;
+<span class="br0">}</span></pre>
+</div>
+<div class="secedit"><form class="button" method="post" action="/doku.php/mediawiki2html_machine/code"><div class="no"><input name="do" value="edit" type="hidden"><input name="lines" value="3907-" type="hidden"><input value="Edit" class="button" type="submit"></div></form></div>      <!-- wikipage stop -->
+      <div class="clearer"> </div>
+    </div>
+  </div>
+
+  
+  <div id="footer">
+        <hr class="invisible">
+        <p class="pageinfo">mediawiki2html_machine/code.txt · Last modified: 2006/08/27 20:46 by 87.219.106.10</p>
+        <p><a href="http://www.laplaya.at/">Johannes Buchner on Software.</a> |
+        <a href="#top" class="action top" accesskey="x">Back to top</a></p>
+      <div class="clearer"> </div>
+  </div>
+
+</div>
+
+<img src="mediawiki2html-code_files/indexer.gif" alt="" height="1" width="1">
+
+</body></html>
